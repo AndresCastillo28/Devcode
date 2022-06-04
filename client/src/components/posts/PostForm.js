@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addPost } from '../../actions/post';
 
@@ -26,6 +26,7 @@ const PostForm = ({ addPost }) => {
           placeholder='Create a post'
           value={text}
           onChange={e => setText(e.target.value)}
+          className='post-textarea'
           required
         />
         <input type='submit' className='btn btn-dark my-1' value='Submit' />
