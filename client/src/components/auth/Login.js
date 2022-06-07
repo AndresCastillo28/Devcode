@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { UilArrow, UilSignInAlt } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { Link, Navigate } from 'react-router-dom';
 import { login } from '../../actions/auth';
 
 const Login = ({ login, isAuthenticated }) => {
@@ -21,41 +22,59 @@ const Login = ({ login, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Navigate to="/dashboard" />;
+    return <Navigate to='/dashboard' />;
   }
 
   return (
-    <section className="container">
-      <h1 className="large text-primary">Sign In</h1>
-      <p className="lead">
-        <i className="fas fa-user" /> Sign Into Your Account
-      </p>
-      <form className="form" onSubmit={onSubmit}>
-        <div className="form-group">
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            value={email}
-            onChange={onChange}
-          />
+    <>
+      <section>
+        <div className='container mt-5 pt-5'>
+          <div className='row'>
+            <div className='col-12 col-sm-7 col-md-6 m-auto'>
+              <div className='card border-0 shadow'>
+                <div className='card-body'>
+                  <h1 className='login__title text-center'>
+                    <UilArrow className='login__title-icon' />DevCode
+                  </h1>
+                  <form className='form' onSubmit={onSubmit}>
+                    <div className='form-group'>
+                      <input
+                        type='email'
+                        placeholder='Ingresa tu correo electrónico'
+                        name='email'
+                        className='form-control my-4 py-2'
+                        value={email}
+                        onChange={onChange}
+                      />
+                    </div>
+                    <div className='form-group'>
+                      <input
+                        type='password'
+                        placeholder='Ingresa tu contraseña'
+                        name='password'
+                        className='form-control my-4 py-2'
+                        value={password}
+                        onChange={onChange}
+                        minLength='6'
+                      />
+                    </div>
+                    <div className='d-flex justify-content-center'>
+                      <button type='submit' className='btn btn-primary text-center'>
+                        Iniciar Sesión<UilSignInAlt className='ms-1' />
+                      </button>
+                    </div>
+                  </form>
+                  <div className='text-center pt-4'>
+                    <p className='login__text'>¿No tienes una cuenta?</p>
+                    <Link to='/register' className='nav-link login__link'>Registrate</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={password}
-            onChange={onChange}
-            minLength="6"
-          />
-        </div>
-        <input type="submit" className="btn btn-primary" value="Login" />
-      </form>
-      <p className="my-1">
-        Don't have an account? <Link to="/register">Sign Up</Link>
-      </p>
-    </section>
+      </section>
+    </>
   );
 };
 

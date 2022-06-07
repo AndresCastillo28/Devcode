@@ -17,8 +17,11 @@
 }
 
 body {
-    color: var(--color-dark);
     background: var(--color-light);
+}
+
+a {
+    text-decoration: none;
 }
 
 .profile-photo {
@@ -41,6 +44,7 @@ img {
     cursor: pointer;
     transition: all 300ms ease;
     font-size: 0.9rem;
+    border: none;
 }
 
 .btn:hover {
@@ -101,4 +105,75 @@ nav .search-bar input[type="text"]::placeholder {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.home__title,
+.login__title {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 4.5rem;
+}
+
+.home__title-icon,
+.login__title-icon {
+    width: 4rem;
+    height: auto;
+}
+
+.home__description {
+    font-size: 1.5rem;
+    color: var(--color-gray);
+}
+
+.login__text {
+    color: var(--color-gray);
+}
+
+.login__link {
+    color: var(--color-primary);
+}
+
+.footer {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.footer__copy {
+    color: var(--color-primary) !important;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .home__title {
+        font-size: 4rem;
+    }
+
+    .home__title-icon {
+        width: 3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .login__title {
+        font-size: 2.8rem;
+    }
+
+    .login__title-icon {
+        width: 3rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .home {
+        margin-top: 3rem;
+    }
+
+    .home__title {
+        font-size: 3rem;
+    }
+
+    .home__title-icon {
+        width: 3rem;
+    }
 }
