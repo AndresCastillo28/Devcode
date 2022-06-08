@@ -125,11 +125,18 @@ nav .search-bar input[type="text"]::placeholder {
     color: var(--color-gray);
 }
 
-.login__text {
+.login__text,
+.register__text {
     color: var(--color-gray);
 }
 
-.login__link {
+.login__link,
+.register__link {
+    color: var(--color-primary);
+}
+
+.login__label,
+.register__label {
     color: var(--color-primary);
 }
 

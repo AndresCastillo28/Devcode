@@ -22,7 +22,7 @@ const Login = ({ login, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Navigate to='/dashboard' />;
+    return <Navigate to='/posts' />;
   }
 
   return (
@@ -33,30 +33,38 @@ const Login = ({ login, isAuthenticated }) => {
             <div className='col-12 col-sm-7 col-md-6 m-auto'>
               <div className='card border-0 shadow'>
                 <div className='card-body'>
-                  <h1 className='login__title text-center'>
-                    <UilArrow className='login__title-icon' />DevCode
-                  </h1>
-                  <form className='form' onSubmit={onSubmit}>
-                    <div className='form-group'>
+                  <Link to='/' className='login__title'>
+                    <div className='text-center'>
+                      <UilArrow className='login__title-icon' />DevCode
+                    </div>
+                  </Link>
+                  <form className='mt-3' onSubmit={onSubmit}>
+                    <div className='form-floating mb-4'>
                       <input
                         type='email'
-                        placeholder='Ingresa tu correo electrónico'
                         name='email'
-                        className='form-control my-4 py-2'
+                        className='form-control'
+                        placeholder='Correo electrónico'
                         value={email}
+                        required
+                        id='floatingInput'
                         onChange={onChange}
                       />
+                      <label className='login__label' htmlFor='floatingInput'>Correo electrónico</label>
                     </div>
-                    <div className='form-group'>
+                    <div className='form-floating mb-4'>
                       <input
                         type='password'
-                        placeholder='Ingresa tu contraseña'
                         name='password'
-                        className='form-control my-4 py-2'
+                        className='form-control'
+                        placeholder='Contraseña'
                         value={password}
                         onChange={onChange}
+                        required
+                        id='floatingPassword'
                         minLength='6'
                       />
+                      <label className='login__label' htmlFor='floatingPassword'>Contraseña</label>
                     </div>
                     <div className='d-flex justify-content-center'>
                       <button type='submit' className='btn btn-primary text-center'>
