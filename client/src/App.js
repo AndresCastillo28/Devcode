@@ -71,7 +71,10 @@ const App = () => {
             path="add-education"
             element={<PrivateRoute component={AddEducation} />}
           />
-          <Route path="posts" element={<PrivateRoute component={Posts} />} />
+          <Route
+            path="posts"
+            element={<PrivateRoute component={Posts} />}
+          />
           <Route path="posts/:id" element={<PrivateRoute component={Post} />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>

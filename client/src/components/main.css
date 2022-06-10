@@ -24,18 +24,6 @@ a {
     text-decoration: none;
 }
 
-.profile-photo {
-    width: 2.7rem;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-img {
-    display: block;
-    width: 100%;
-}
-
 .btn {
     display: inline-block;
     padding: var(--btn-padding);
@@ -56,6 +44,11 @@ img {
     color: #fff;
 }
 
+.btn-secondary {
+    background: var(--color-gray);
+    color: #fff;
+}
+
 .btn-danger {
     background: var(--color-danger);
     color: #fff;
@@ -72,7 +65,7 @@ img {
 /* Navbar */
 .navbar {
     background: var(--color-white);
-    padding: 1.5rem 0;
+    padding: 1rem 0;
 }
 
 .nav-logo {
@@ -100,8 +93,15 @@ nav .search-bar input[type="text"]::placeholder {
     color: var(--color-gray);
 }
 
-.btn-login,
-.btn-logout {
+.nav-link {
+    color: var(--color-primary);
+}
+
+.nav__user-photo {
+    width: 40px;
+}
+
+.btn-login {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -138,6 +138,44 @@ nav .search-bar input[type="text"]::placeholder {
 .login__label,
 .register__label {
     color: var(--color-primary);
+}
+
+.post__title,
+.post__user,
+.profile__title {
+    color: var(--color-primary);
+}
+
+.avatar {
+    height: 3rem;
+    width: 3rem;
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0 !important;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.post__action {
+    cursor: pointer;
+    color: var(--color-gray);
+}
+
+.post__dropdown-delete {
+    color: var(--color-danger);
+}
+
+.post__dropdown-delete:hover {
+    color: var(--color-danger);
+}
+
+.post__action-comment {
+    color: var(--color-gray);
 }
 
 .footer {

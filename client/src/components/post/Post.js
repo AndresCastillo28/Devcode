@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Link, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { getPost } from '../../actions/post';
+import Navbar from '../layout/Navbar';
 import Spinner from '../layout/Spinner';
-import PostItem from '../posts/PostItem';
 import CommentForm from '../post/CommentForm';
 import CommentItem from '../post/CommentItem';
-import { getPost } from '../../actions/post';
+import PostItem from '../posts/PostItem';
 
 const Post = ({ getPost, post: { post, loading } }) => {
   const { id } = useParams();
@@ -17,18 +18,18 @@ const Post = ({ getPost, post: { post, loading } }) => {
   return loading || post === null ? (
     <Spinner />
   ) : (
-    <section className="container">
-      <Link to="/posts" className="btn">
-        Back To Posts
-      </Link>
-      <PostItem post={post} showActions={false} />
-      <CommentForm postId={post._id} />
-      <div className="comments">
-        {post.comments.map((comment) => (
-          <CommentItem key={comment._id} comment={comment} postId={post._id} />
-        ))}
-      </div>
-    </section>
+    <>
+      <Navbar />
+      <section className='container-fluid mt-5 pt-5'>
+        <PostItem post={post} showActions={false} />
+        <CommentForm postId={post._id} />
+        <div>
+          {post.comments.map((comment) => (
+            <CommentItem key={comment._id} comment={comment} postId={post._id} />
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 

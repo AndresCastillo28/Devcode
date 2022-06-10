@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import { login } from '../../actions/auth';
+import '../main.css';
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ const Login = ({ login, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Navigate to='/posts' />;
+    return <Navigate to='/dashboard' />;
   }
 
   return (

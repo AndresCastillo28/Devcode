@@ -1,9 +1,9 @@
 import { UilArrow, UilSignInAlt } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
-import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import home from '../images/home.png';
+import '../main.css';
 import Footer from './Footer';
 
 const Home = ({ isAuthenticated }) => {
@@ -16,7 +16,7 @@ const Home = ({ isAuthenticated }) => {
       <section className='container-fluid home'>
         <div className='row'>
           <div className='col-xxl-6 col-lg-8'>
-            <img src={home} alt='home' className='img-fluid' />
+            <img src={home} alt='home' className='img-fluid d-block w-100' />
           </div>
           <div className='col-xxl-6 col-lg-4 d-flex align-items-center text-center'>
             <div>

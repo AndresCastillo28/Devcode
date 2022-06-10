@@ -1,39 +1,37 @@
 import { UilArrow, UilPlus, UilSearch, UilSignInAlt, UilSignOutAlt } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logout } from '../../actions/auth';
 import profile from '../images/profile-1.jpg';
-import './main.css';
+import '../main.css';
 
-const Navbar = ({ auth: { isAuthenticated }, logout }) => {
+const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
   const authLinks = (
-    <ul className='navbar-nav ms-auto'>
-      <div className="search-bar">
+    <ul className='navbar-nav flex-nowrap align-items-center ms-auto'>
+      <div className='search-bar ms-2'>
         <UilSearch />
-        <input type="text" placeholder='Search' />
+        <input type='text' placeholder='Buscar...' />
       </div>
-      <li className='nav-item'>
-        <Link to="/profiles" className='nav-link'>Developers</Link>
+      <li className='nav-item ms-2'>
+        <Link to='/profiles' className='nav-link'>Desarrolladores</Link>
       </li>
-      <li className='nav-item ps-3'>
-        <Link to="/posts" className='btn pt-2 pb-2 btn-primary'>
-          Create
-          <UilPlus />
+      <li className='nav-item ms-2'>
+        <Link to='/posts' className='btn btn-primary d-flex align-items-center'>
+          Crear <UilPlus className='ms-1' />
         </Link>
       </li>
-      <li className='nav-item'>
-        <Link to="/dashboard">
-          <div className='profile-photo'>
-            <img src={profile} alt='Profile' />
+      <li className='nav-item ms-2'>
+        <Link to='/dashboard' className='nav-link'>
+          <div className='d-flex align-items-center'>
+            <img src={profile} alt='User' className='nav__user-photo rounded-circle' /> {user && user.name}
           </div>
         </Link>
       </li>
-      <li className='nav-item ps-3'>
-        <Link onClick={logout} to='/' className='btn pt-2 pb-2 btn-logout btn-danger'>
-          Logout
-          <UilSignOutAlt />
+      <li className='nav-item ms-2'>
+        <Link onClick={logout} to='/' className='btn btn-logout btn-danger d-flex align-items-center'>
+          Cerrar sesión <UilSignOutAlt className='ms-1' />
         </Link>
       </li>
     </ul>
@@ -42,13 +40,13 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
   const guestLinks = (
     <ul className='navbar-nav ms-auto'>
       <li className='nav-item'>
-        <Link to="/profiles" className='nav-link'>Developers</Link>
+        <Link to='/profiles' className='nav-link'>Developers</Link>
       </li>
       <li className='nav-item'>
-        <Link to="/register" className='nav-link'>Register</Link>
+        <Link to='/register' className='nav-link'>Register</Link>
       </li>
       <li className='nav-item ps-3'>
-        <Link to="/login" className='btn pt-2 pb-2 btn-login btn-primary'>
+        <Link to='/login' className='btn pt-2 pb-2 btn-login btn-primary'>
           Login
           <UilSignInAlt />
         </Link>
@@ -58,7 +56,7 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
 
   return (
     <nav className='navbar fixed-top navbar-expand-lg'>
-      <div className='container'>
+      <div className='container-fluid'>
         <div className='navbar-brand'>
           <Link to='/' className='nav-logo'>
             <UilArrow /> DevCode
