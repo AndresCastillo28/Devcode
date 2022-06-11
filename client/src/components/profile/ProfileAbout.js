@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import Navbar from '../layout/Navbar';
 
 const ProfileAbout = ({
@@ -11,19 +11,19 @@ const ProfileAbout = ({
 }) => (
   <>
     <Navbar />
-    <div className='profile-about bg-light p-2'>
+    <div>
       {bio && (
         <Fragment>
-          <h2 className='text-primary'>{name.trim().split(' ')[0]}s Bio</h2>
+          {/* <h2>{name.trim().split(' ')[0]}s Bio</h2> */}
           <p>{bio}</p>
-          <div className='line' />
+          <div />
         </Fragment>
       )}
-      <h2 className='text-primary'>Skill Set</h2>
-      <div className='skills'>
+      <h2>Skill Set</h2>
+      <div>
         {skills.map((skill, index) => (
-          <div key={index} className='p-1'>
-            <i className='fas fa-check' /> {skill}
+          <div key={index}>
+            {skill}
           </div>
         ))}
       </div>

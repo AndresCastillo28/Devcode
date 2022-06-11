@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getPosts } from '../../actions/post';
 import Navbar from '../layout/Navbar';
+import Sidebar from '../layout/Sidebar';
 import '../main.css';
 import PostForm from './PostForm';
 import PostItem from './PostItem';
@@ -16,12 +17,21 @@ const Posts = ({ getPosts, post: { posts } }) => {
     <>
       <Navbar />
       <section className='container-fluid mt-5 pt-5'>
-        <h1 className='post__title text-center mt-4'>Publicaciones</h1>
-        <PostForm />
-        <div>
-          {posts.map((post) => (
-            <PostItem key={post._id} post={post} />
-          ))}
+        <div className='row g-4'>
+          <div className='col-lg-3'>
+            <Sidebar />
+          </div>
+          <div className='col-md-8 col-lg-6 vstack gap-4'>
+            <h1 className='post__title text-center mt-4'>Publicaciones</h1>
+            <PostForm />
+            <div>
+              {posts.map((post) => (
+                <PostItem key={post._id} post={post} />
+              ))}
+            </div>
+          </div>
+          <div className='col-lg-3'>
+          </div>
         </div>
       </section>
     </>

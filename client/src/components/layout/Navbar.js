@@ -1,4 +1,4 @@
-import { UilArrow, UilPlus, UilSearch, UilSignInAlt, UilSignOutAlt } from '@iconscout/react-unicons';
+import { UilArrow, UilCompass, UilPlus, UilSearch, UilSignInAlt, UilSignOutAlt, UilUserCircle } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
 import { Fragment } from 'react';
 import { connect } from 'react-redux';
@@ -9,32 +9,43 @@ import '../main.css';
 
 const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
   const authLinks = (
-    <ul className='navbar-nav flex-nowrap align-items-center ms-auto'>
-      <div className='search-bar ms-2'>
-        <UilSearch />
+    <div className='navbar-collapse'>
+      <div className='search-bar ms-auto'>
+        <UilSearch className='search__bar-icon'/>
         <input type='text' placeholder='Buscar...' />
       </div>
-      <li className='nav-item ms-2'>
-        <Link to='/profiles' className='nav-link'>Desarrolladores</Link>
-      </li>
-      <li className='nav-item ms-2'>
-        <Link to='/posts' className='btn btn-primary d-flex align-items-center'>
-          Crear <UilPlus className='ms-1' />
-        </Link>
-      </li>
-      <li className='nav-item ms-2'>
-        <Link to='/dashboard' className='nav-link'>
-          <div className='d-flex align-items-center'>
-            <img src={profile} alt='User' className='nav__user-photo rounded-circle' /> {user && user.name}
+      <ul className='navbar-nav flex-nowrap align-items-center ms-auto'>
+        <li className='nav-item ms-2 pt-2'>
+          <Link to='/posts' className='btn btn-primary d-flex align-items-center'>
+            Crear <UilPlus className='ms-1' />
+          </Link>
+        </li>
+        <li className='nav-item ms-2 pt-2'>
+          <div className='dropdown'>
+            <div id='dropdownMenuButton1' data-bs-toggle='dropdown' aria-expanded='false'>
+              <img src={profile} alt='User' className='nav__user-photo rounded-circle' />
+            </div>
+            <ul className='dropdown-menu dropdown-menu-end mt-2' aria-labelledby='dropdownMenuButton1' >
+              <li className='dropdown-item mt-2'>
+                <Link to='/dashboard' className='nav__dropdown-item'>
+                  <span><UilUserCircle />Perfil</span>
+                </Link>
+              </li>
+              <li className='dropdown-item mt-2'>
+                <Link to='/profiles' className='nav__dropdown-item'>
+                  <span><UilCompass />Explorar</span>
+                </Link>
+              </li>
+              <li className='dropdown-item mt-2'>
+                <Link onClick={logout} to='/' className='d-flex align-items-center nav__logout'>
+                  Cerrar sesión <UilSignOutAlt className='ms-1' />
+                </Link>
+              </li>
+            </ul>
           </div>
-        </Link>
-      </li>
-      <li className='nav-item ms-2'>
-        <Link onClick={logout} to='/' className='btn btn-logout btn-danger d-flex align-items-center'>
-          Cerrar sesión <UilSignOutAlt className='ms-1' />
-        </Link>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
   );
 
   const guestLinks = (
@@ -56,7 +67,7 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
 
   return (
     <nav className='navbar fixed-top navbar-expand-lg'>
-      <div className='container-fluid'>
+      <div className='container'>
         <div className='navbar-brand'>
           <Link to='/' className='nav-logo'>
             <UilArrow /> DevCode
@@ -69,7 +80,7 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
           <div className='offcanvas-header'>
             <button type='button' className='btn-close' data-bs-dismiss='offcanvas' aria-label='Close'></button>
           </div>
-          <div className='offcanvas-body text-center'>
+          <div className='offcanvas-body'>
             <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
           </div>
         </div>
