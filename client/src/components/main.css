@@ -96,7 +96,7 @@ nav .search-bar input[type="text"]::placeholder {
     color: var(--color-gray);
 }
 
-.search__bar-icon{
+.search__bar-icon {
     color: var(--color-gray);
 }
 
@@ -151,7 +151,12 @@ nav .search-bar input[type="text"]::placeholder {
 .post__title,
 .post__user,
 .profile__title,
-.profile__name {
+.profile__name,
+.dashboard__title,
+.dashboard__username,
+.profile__label,
+.profile__title,
+.profile__date {
     color: var(--color-primary);
 }
 
@@ -234,6 +239,11 @@ nav .search-bar input[type="text"]::placeholder {
 }
 
 .post__action-comment {
+    color: var(--color-gray);
+}
+
+.education__title,
+.experience__title {
     color: var(--color-gray);
 }
 

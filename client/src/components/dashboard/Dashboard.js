@@ -1,5 +1,6 @@
+import { UilTrashAlt } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteAccount, getCurrentProfile } from '../../actions/profile';
@@ -21,28 +22,28 @@ const Dashboard = ({
   return (
     <>
       <Navbar />
-      <section className="container">
-        <h1 className="large text-primary">Dashboard</h1>
-        <p className="lead">
-          <i className="fas fa-user" /> Welcome {user && user.name}
-        </p>
+      <section className='container mt-5 pt-5'>
+        <h1 className='dashboard__title text-center mt-4'>Perfil</h1>
+        <h4 className='dashboard__username'>
+          Bienvenido {user && user.name}
+        </h4>
         {profile !== null ? (
           <>
             <DashboardActions />
             <Experience experience={profile.experience} />
             <Education education={profile.education} />
 
-            <div className="my-2">
-              <button className="btn btn-danger" onClick={() => deleteAccount()}>
-                <i className="fas fa-user-minus" /> Delete My Account
+            <div>
+              <button className='btn btn-danger d-flex align-items-center mb-4' onClick={() => deleteAccount()}>
+                Eliminar cuenta <UilTrashAlt />
               </button>
             </div>
           </>
         ) : (
           <>
-            <p>You have not yet setup a profile, please add some info</p>
-            <Link to="/create-profile" className="btn btn-primary my-1">
-              Create Profile
+            <p>Aún no ha configurado un perfil, agregue información.</p>
+            <Link to='/create-profile' className='btn btn-primary'>
+              Crear perfil
             </Link>
           </>
         )}

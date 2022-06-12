@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import { connect } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { addEducation } from '../../actions/profile';
+import Navbar from '../layout/Navbar';
 
 const AddEducation = ({ addEducation }) => {
   const navigate = useNavigate();
@@ -23,91 +24,112 @@ const AddEducation = ({ addEducation }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
-    <section className="container">
-      <h1 className="large text-primary">Add Your Education</h1>
-      <p className="lead">
-        <i className="fas fa-code-branch" /> Add any school or bootcamp that you
-        have attended
-      </p>
-      <small>* = required field</small>
-      <form
-        className="form"
-        onSubmit={(e) => {
-          e.preventDefault();
-          addEducation(formData, navigate);
-        }}
-      >
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="* School or Bootcamp"
-            name="school"
-            value={school}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="* Degree or Certificate"
-            name="degree"
-            value={degree}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Field of Study"
-            name="fieldofstudy"
-            value={fieldofstudy}
-            onChange={onChange}
-          />
-        </div>
-        <div className="form-group">
-          <h4>From Date</h4>
-          <input type="date" name="from" value={from} onChange={onChange} />
-        </div>
-        <div className="form-group">
-          <p>
+    <>
+      <Navbar />
+      <section section className='container mt-5 pt-5'>
+        <h1 className='profile__title mt-4'>Agregar Educación</h1>
+        <p className='text-muted'>Agregar Universidad o Bootcamp</p>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            addEducation(formData, navigate);
+          }}
+        >
+          <div className='form-floating mb-4'>
             <input
-              type="checkbox"
-              name="current"
-              checked={current}
-              value={current}
-              onChange={() => setFormData({ ...formData, current: !current })}
-            />{' '}
-            Current School
-          </p>
-        </div>
-        <div className="form-group">
-          <h4>To Date</h4>
-          <input
-            type="date"
-            name="to"
-            value={to}
-            onChange={onChange}
-            disabled={current}
-          />
-        </div>
-        <div className="form-group">
-          <textarea
-            name="description"
-            cols="30"
-            rows="5"
-            placeholder="Program Description"
-            value={description}
-            onChange={onChange}
-          />
-        </div>
-        <input type="submit" className="btn btn-primary my-1" />
-        <Link className="btn btn-light my-1" to="/dashboard">
-          Go Back
-        </Link>
-      </form>
-    </section>
+              type='text'
+              placeholder='Escuela o Bootcamp'
+              name='school'
+              value={school}
+              onChange={onChange}
+              className='form-control'
+              id='floatingText'
+              required
+            />
+            <label className='profile__label' htmlFor='floatingText'>Escuela o Bootcamp</label>
+          </div>
+          <div className='form-floating mb-4'>
+            <input
+              type='text'
+              placeholder='Grado o Certificado'
+              name='degree'
+              value={degree}
+              onChange={onChange}
+              className='form-control'
+              id='floatingText'
+              required
+            />
+            <label className='profile__label' htmlFor='floatingText'>Grado o Certificado</label>
+          </div>
+          <div className='form-floating mb-4'>
+            <input
+              type='text'
+              placeholder='Campo de estudio'
+              name='fieldofstudy'
+              value={fieldofstudy}
+              onChange={onChange}
+              className='form-control'
+              id='floatingText'
+              required
+            />
+            <label className='profile__label' htmlFor='floatingText'>Campo de estudio</label>
+          </div>
+          <div>
+            <h4 className='profile__title'>Desde</h4>
+            <input
+              className='form-control profile__date'
+              type='date'
+              name='from'
+              value={from}
+              onChange={onChange}
+            />
+          </div>
+          <div className='form-group'>
+            <div className='my-2'>
+              <input
+                type='checkbox'
+                name='current'
+                checked={current}
+                value={current}
+                onChange={() => setFormData({ ...formData, current: !current })}
+              />
+              <span className='ms-2 text-muted'>Actualmente estudio</span>
+            </div>
+          </div>
+          <div className='mb-4'>
+            <h4 className='profile__title'>Hasta</h4>
+            <input
+              className='form-control profile__date'
+              type='date'
+              name='to'
+              value={to}
+              onChange={onChange}
+              disabled={current}
+            />
+          </div>
+          <div className='form-floating mb-4'>
+            <textarea
+              name='description'
+              cols='30'
+              rows='5'
+              placeholder='Descripción del programa'
+              value={description}
+              onChange={onChange}
+              className='form-control'
+              id='floatingText'
+              required
+            />
+            <label className='profile__label' htmlFor='floatingText'>Descripción del programa</label>
+          </div>
+          <div className='d-flex align-items-center justify-content-center mb-4'>
+            <input type='submit' className='btn btn-primary me-4' />
+            <Link className='btn btn-secondary' to='/dashboard'>
+              Regresar
+            </Link>
+          </div>
+        </form>
+      </section>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react';
+import { UilTrashAlt } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
+import { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { deleteExperience } from '../../actions/profile';
 import formatDate from '../../utils/formatDate';
@@ -8,16 +9,16 @@ const Experience = ({ experience, deleteExperience }) => {
   const experiences = experience.map((exp) => (
     <tr key={exp._id}>
       <td>{exp.company}</td>
-      <td className="hide-sm">{exp.title}</td>
+      <td>{exp.title}</td>
       <td>
         {formatDate(exp.from)} - {exp.to ? formatDate(exp.to) : 'Now'}
       </td>
       <td>
         <button
           onClick={() => deleteExperience(exp._id)}
-          className="btn btn-danger"
+          className='btn btn-danger d-flex align-items-center'
         >
-          Delete
+          Eliminar <UilTrashAlt />
         </button>
       </td>
     </tr>
@@ -25,13 +26,13 @@ const Experience = ({ experience, deleteExperience }) => {
 
   return (
     <Fragment>
-      <h2 className="my-2">Experience Credentials</h2>
-      <table className="table">
+      <h2 className='experience__title mt-2'>Experiencia</h2>
+      <table className='table table-secondary table-hover'>
         <thead>
           <tr>
-            <th>Company</th>
-            <th className="hide-sm">Title</th>
-            <th className="hide-sm">Years</th>
+            <th>Compañia</th>
+            <th>Titulo</th>
+            <th>Años</th>
             <th />
           </tr>
         </thead>

@@ -1,8 +1,9 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import { Link, useMatch, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Fragment, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { Link, useMatch, useNavigate } from 'react-router-dom';
 import { createProfile, getCurrentProfile } from '../../actions/profile';
+import Navbar from '../layout/Navbar';
 
 /*
   NOTE: declare initialState outside of component
@@ -83,181 +84,198 @@ const ProfileForm = ({
   };
 
   return (
-    <section className="container">
-      <h1 className="large text-primary">
-        {creatingProfile ? 'Create Your Profile' : 'Edit Your Profile'}
-      </h1>
-      <p className="lead">
-        <i className="fas fa-user" />
-        {creatingProfile
-          ? ` Let's get some information to make your`
-          : ' Add some changes to your profile'}
-      </p>
-      <small>* = required field</small>
-      <form className="form" onSubmit={onSubmit}>
-        <div className="form-group">
-          <select name="status" value={status} onChange={onChange}>
-            <option>* Select Professional Status</option>
-            <option value="Developer">Developer</option>
-            <option value="Junior Developer">Junior Developer</option>
-            <option value="Senior Developer">Senior Developer</option>
-            <option value="Manager">Manager</option>
-            <option value="Student or Learning">Student or Learning</option>
-            <option value="Instructor">Instructor or Teacher</option>
-            <option value="Intern">Intern</option>
-            <option value="Other">Other</option>
-          </select>
-          <small className="form-text">
-            Give us an idea of where you are at in your career
-          </small>
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Company"
-            name="company"
-            value={company}
-            onChange={onChange}
-          />
-          <small className="form-text">
-            Could be your own company or one you work for
-          </small>
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Website"
-            name="website"
-            value={website}
-            onChange={onChange}
-          />
-          <small className="form-text">
-            Could be your own or a company website
-          </small>
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Location"
-            name="location"
-            value={location}
-            onChange={onChange}
-          />
-          <small className="form-text">
-            City & state suggested (eg. Boston, MA)
-          </small>
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="* Skills"
-            name="skills"
-            value={skills}
-            onChange={onChange}
-          />
-          <small className="form-text">
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
-          </small>
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Github Username"
-            name="githubusername"
-            value={githubusername}
-            onChange={onChange}
-          />
-          <small className="form-text">
-            If you want your latest repos and a Github link, include your
-            username
-          </small>
-        </div>
-        <div className="form-group">
-          <textarea
-            placeholder="A short bio of yourself"
-            name="bio"
-            value={bio}
-            onChange={onChange}
-          />
-          <small className="form-text">Tell us a little about yourself</small>
-        </div>
-
-        <div className="my-2">
-          <button
-            onClick={() => toggleSocialInputs(!displaySocialInputs)}
-            type="button"
-            className="btn btn-light"
-          >
-            Add Social Network Links
-          </button>
-          <span>Optional</span>
-        </div>
-
-        {displaySocialInputs && (
-          <Fragment>
-            <div className="form-group social-input">
-              <i className="fab fa-twitter fa-2x" />
-              <input
-                type="text"
-                placeholder="Twitter URL"
-                name="twitter"
-                value={twitter}
-                onChange={onChange}
-              />
-            </div>
-
-            <div className="form-group social-input">
-              <i className="fab fa-facebook fa-2x" />
-              <input
-                type="text"
-                placeholder="Facebook URL"
-                name="facebook"
-                value={facebook}
-                onChange={onChange}
-              />
-            </div>
-
-            <div className="form-group social-input">
-              <i className="fab fa-youtube fa-2x" />
-              <input
-                type="text"
-                placeholder="YouTube URL"
-                name="youtube"
-                value={youtube}
-                onChange={onChange}
-              />
-            </div>
-
-            <div className="form-group social-input">
-              <i className="fab fa-linkedin fa-2x" />
-              <input
-                type="text"
-                placeholder="Linkedin URL"
-                name="linkedin"
-                value={linkedin}
-                onChange={onChange}
-              />
-            </div>
-
-            <div className="form-group social-input">
-              <i className="fab fa-instagram fa-2x" />
-              <input
-                type="text"
-                placeholder="Instagram URL"
-                name="instagram"
-                value={instagram}
-                onChange={onChange}
-              />
-            </div>
-          </Fragment>
-        )}
-
-        <input type="submit" className="btn btn-primary my-1" />
-        <Link className="btn btn-light my-1" to="/dashboard">
-          Go Back
-        </Link>
-      </form>
-    </section>
+    <>
+      <Navbar />
+      <section className='container mt-5 pt-5'>
+        <h1 className='profile__title mt-4'>
+          {creatingProfile ? 'Crea tu perfil' : 'Edita tu perfil'}
+        </h1>
+        <p className='text-muted'>
+          {creatingProfile
+            ? 'Vamos a obtener alguna información para hacer su perfil'
+            : 'Agrega algunos cambios a tu perfil'}
+        </p>
+        <form onSubmit={onSubmit}>
+          <div className='form-floating mb-4'>
+            <select className='form-select' id='floatingSelect' name='status' value={status} onChange={onChange}>
+              <option value='Developer'>Developer</option>
+              <option value='Junior Developer'>Junior Developer</option>
+              <option value='Senior Developer'>Senior Developer</option>
+              <option value='Manager'>Manager</option>
+              <option value='Student or Learning'>Student or Learning</option>
+              <option value='Instructor'>Instructor or Teacher</option>
+              <option value='Intern'>Intern</option>
+              <option value='Other'>Other</option>
+            </select>
+            <label className='profile__label' htmlFor='floatingSelect'>Selecciona tu profesión</label>
+          </div>
+          <div className='form-floating mb-4'>
+            <input
+              type='text'
+              placeholder='Compañia'
+              name='company'
+              value={company}
+              onChange={onChange}
+              className='form-control'
+              id='floatingCompany'
+              required
+            />
+            <label className='profile__label' htmlFor='floatingCompany'>Compañia</label>
+          </div>
+          <div className='form-floating mb-4'>
+            <input
+              type='text'
+              placeholder='Sitio Web'
+              name='website'
+              value={website}
+              onChange={onChange}
+              className='form-control'
+              id='floatingWeb'
+              required
+            />
+            <label className='profile__label' htmlFor='floatingWeb'>Sitio Web</label>
+          </div>
+          <div className='form-floating mb-4'>
+            <input
+              type='text'
+              placeholder='Ubicación'
+              name='location'
+              value={location}
+              onChange={onChange}
+              className='form-control'
+              id='floatingLocation'
+              required
+            />
+            <label className='profile__label' htmlFor='floatingLocation'>Ubicación</label>
+          </div>
+          <div className='form-floating mb-4'>
+            <input
+              type='text'
+              placeholder='Habilidades'
+              name='skills'
+              value={skills}
+              onChange={onChange}
+              className='form-control'
+              id='floatingSkill'
+              required
+            />
+            <label className='profile__label' htmlFor='floatingSkill'>Habilidades</label>
+          </div>
+          <div className='form-floating mb-4'>
+            <input
+              type='text'
+              placeholder='Usuario Github'
+              name='githubusername'
+              value={githubusername}
+              onChange={onChange}
+              className='form-control'
+              id='floatingGithub'
+              required
+            />
+            <label className='profile__label' htmlFor='floatingGithub'>Usuario Github</label>
+          </div>
+          <div className='form-floating mb-4'>
+            <textarea
+              placeholder='Biografia'
+              name='bio'
+              value={bio}
+              onChange={onChange}
+              className='form-control'
+              id='floatingBio'
+              required
+            />
+            <label className='profile__label' htmlFor='floatingBio'>Biografia</label>
+          </div>
+          <div>
+            <button
+              onClick={() => toggleSocialInputs(!displaySocialInputs)}
+              type='button'
+              className='btn btn-secondary'
+            >
+              Agregar enlaces de redes sociales
+            </button>
+            <span className='small ms-2 text-muted'>Opcional</span>
+          </div>
+          {displaySocialInputs && (
+            <Fragment>
+              <div className='mt-3'>
+                <div className='form-floating mb-4'>
+                  <input
+                    type='text'
+                    placeholder='Twitter URL'
+                    name='twitter'
+                    value={twitter}
+                    onChange={onChange}
+                    className='form-control'
+                    id='floatingWeb'
+                    required
+                  />
+                  <label className='profile__label' htmlFor='floatingWeb'>Twitter URL</label>
+                </div>
+                <div className='form-floating mb-4'>
+                  <input
+                    type='text'
+                    placeholder='Facebook URL'
+                    name='facebook'
+                    value={facebook}
+                    onChange={onChange}
+                    className='form-control'
+                    id='floatingWeb'
+                    required
+                  />
+                  <label className='profile__label' htmlFor='floatingWeb'>Facebook URL</label>
+                </div>
+                <div className='form-floating mb-4'>
+                  <input
+                    type='text'
+                    placeholder='YouTube URL'
+                    name='youtube'
+                    value={youtube}
+                    onChange={onChange}
+                    className='form-control'
+                    id='floatingWeb'
+                    required
+                  />
+                  <label className='profile__label' htmlFor='floatingWeb'>YouTube URL</label>
+                </div>
+                <div className='form-floating mb-4'>
+                  <input
+                    type='text'
+                    placeholder='Linkedin URL'
+                    name='linkedin'
+                    value={linkedin}
+                    onChange={onChange}
+                    className='form-control'
+                    id='floatingWeb'
+                    required
+                  />
+                  <label className='profile__label' htmlFor='floatingWeb'>Linkedin URL</label>
+                </div>
+                <div className='form-floating mb-4'>
+                  <input
+                    type='text'
+                    placeholder='Instagram URL'
+                    name='instagram'
+                    value={instagram}
+                    onChange={onChange}
+                    className='form-control'
+                    id='floatingWeb'
+                    required
+                  />
+                  <label className='profile__label' htmlFor='floatingWeb'>Instragram URL</label>
+                </div>
+              </div>
+            </Fragment>
+          )}
+          <div className='d-flex align-items-center justify-content-center mb-4'>
+            <input type='submit' className='btn btn-primary me-4' />
+            <Link className='btn btn-secondary' to='/dashboard'>
+              Regresar
+            </Link>
+          </div>
+        </form>
+      </section>
+    </>
   );
 };
 
