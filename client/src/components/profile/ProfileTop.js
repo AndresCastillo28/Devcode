@@ -12,10 +12,10 @@ const ProfileTop = ({
 }) => {
   return (
     <div>
-      <img src={avatar} alt='' />
+      <img src={avatar} alt='Avatar' />
       <h1>{name}</h1>
       <p>
-        {status} {company ? <span> at {company}</span> : null}
+        {status} {company ? <span> en {company}</span> : null}
       </p>
       <p>{location ? <span>{location}</span> : null}</p>
       <div>

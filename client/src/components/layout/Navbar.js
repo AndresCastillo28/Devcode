@@ -4,14 +4,13 @@ import { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logout } from '../../actions/auth';
-import profile from '../images/profile-1.jpg';
 import '../main.css';
 
 const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
   const authLinks = (
     <div className='navbar-collapse'>
       <div className='search-bar ms-auto'>
-        <UilSearch className='search__bar-icon'/>
+        <UilSearch className='search__bar-icon' />
         <input type='text' placeholder='Buscar...' />
       </div>
       <ul className='navbar-nav flex-nowrap align-items-center ms-auto'>
@@ -23,7 +22,7 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
         <li className='nav-item ms-2 pt-2'>
           <div className='dropdown'>
             <div id='dropdownMenuButton1' data-bs-toggle='dropdown' aria-expanded='false'>
-              <img src={profile} alt='User' className='nav__user-photo rounded-circle' />
+              <img src={user && user.avatar} alt='User' className='nav__user-photo rounded-circle' />
             </div>
             <ul className='dropdown-menu dropdown-menu-end mt-2' aria-labelledby='dropdownMenuButton1' >
               <li className='dropdown-item mt-2'>

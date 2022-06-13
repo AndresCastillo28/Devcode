@@ -3,15 +3,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logout } from '../../actions/auth';
-import profile from '../images/profile-1.jpg';
 import '../main.css';
 
-const Sidebar = ({ auth: { isAuthenticated, user }, logout }) => {
+const Sidebar = ({ auth: { user } }) => {
     return (
         <section className='d-none d-lg-block position-fixed'>
             <div className='left'>
                 <div className='profile'>
-                    <img src={profile} alt='User' className='nav__user-photo rounded-circle' />
+                    <img src={user && user.avatar} alt='User' className='nav__user-photo rounded-circle' />
                     <div className='handle'>
                         <h4 className='profile__name'>{user && user.name}</h4>
                     </div>

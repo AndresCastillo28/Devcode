@@ -7,16 +7,16 @@ const ProfileEducation = ({
   <div>
     <h3>{school}</h3>
     <p>
-      {formatDate(from)} - {to ? formatDate(to) : 'Now'}
+      {formatDate(from)} - {to ? formatDate(to) : 'Actualmente'}
     </p>
     <p>
-      <strong>Degree: </strong> {degree}
+      <strong>Grado o Certificado: </strong> {degree}
     </p>
     <p>
-      <strong>Field Of Study: </strong> {fieldofstudy}
+      <strong>Campo de estudio: </strong> {fieldofstudy}
     </p>
     <p>
-      <strong>Description: </strong> {description}
+      <strong>Descripción: </strong> {description}
     </p>
   </div>
 );

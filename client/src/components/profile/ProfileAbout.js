@@ -14,12 +14,10 @@ const ProfileAbout = ({
     <div>
       {bio && (
         <Fragment>
-          {/* <h2>{name.trim().split(' ')[0]}s Bio</h2> */}
           <p>{bio}</p>
-          <div />
         </Fragment>
       )}
-      <h2>Skill Set</h2>
+      <h2>Habilidades</h2>
       <div>
         {skills.map((skill, index) => (
           <div key={index}>
