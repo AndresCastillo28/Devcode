@@ -1,4 +1,4 @@
-import { UilCompass, UilEdit, UilUserCircle, UilUsersAlt } from '@iconscout/react-unicons';
+import { UilCompass, UilEdit, UilSetting, UilUsersAlt } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -19,7 +19,7 @@ const Sidebar = ({ auth: { isAuthenticated, user }, logout }) => {
             </div>
             <div className='sidebar'>
                 <Link to='/dashboard' className='menu-item'>
-                    <span><UilUserCircle className='sidebar-icon' />Perfil</span>
+                    <span><UilSetting className='sidebar-icon' />Configuración</span>
                 </Link>
                 <Link to='/profiles' className='menu-item'>
                     <span><UilCompass className='sidebar-icon' />Explorar</span>

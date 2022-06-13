@@ -156,7 +156,8 @@ nav .search-bar input[type="text"]::placeholder {
 .dashboard__username,
 .profile__label,
 .profile__title,
-.profile__date {
+.profile__date,
+.not__found-title {
     color: var(--color-primary);
 }
 
@@ -245,6 +246,42 @@ nav .search-bar input[type="text"]::placeholder {
 .education__title,
 .experience__title {
     color: var(--color-gray);
+}
+
+.not__found-img {
+    animation: animates 2s linear infinite alternate;
+}
+
+.not__found-number {
+    color: var(--color-primary);
+    font-size: 5rem;
+    font-weight: 700;
+    margin-top: 10rem;
+    animation: animatestext 2s linear infinite alternate;
+}
+
+.not__found-title{
+    font-weight: 700;
+}
+
+@keyframes animates {
+    0% {
+        transform: translateX(5%);
+    }
+
+    100% {
+        transform: translateX(-5%);
+    }
+}
+
+@keyframes animatestext {
+    0% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
 }
 
 .footer {

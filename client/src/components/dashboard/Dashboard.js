@@ -23,7 +23,7 @@ const Dashboard = ({
     <>
       <Navbar />
       <section className='container mt-5 pt-5'>
-        <h1 className='dashboard__title text-center mt-4'>Perfil</h1>
+        <h1 className='dashboard__title text-center mt-4'>Configuración</h1>
         <h4 className='dashboard__username'>
           Bienvenido {user && user.name}
         </h4>

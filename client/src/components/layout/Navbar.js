@@ -1,4 +1,4 @@
-import { UilArrow, UilCompass, UilPlus, UilSearch, UilSignInAlt, UilSignOutAlt, UilUserCircle } from '@iconscout/react-unicons';
+import { UilArrow, UilCompass, UilPlus, UilSearch, UilSetting, UilSignInAlt, UilSignOutAlt } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
 import { Fragment } from 'react';
 import { connect } from 'react-redux';
@@ -28,7 +28,7 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
             <ul className='dropdown-menu dropdown-menu-end mt-2' aria-labelledby='dropdownMenuButton1' >
               <li className='dropdown-item mt-2'>
                 <Link to='/dashboard' className='nav__dropdown-item'>
-                  <span><UilUserCircle />Perfil</span>
+                  <span><UilSetting />Configuración</span>
                 </Link>
               </li>
               <li className='dropdown-item mt-2'>
