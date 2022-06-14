@@ -18,7 +18,7 @@ router.get('/me', auth, async(req, res) => {
          ['name', 'avatar']);
 
         if(!profile){
-            return res.status(400).json({ msg: 'There is no profile for this user '});
+            return res.status(400).json({ msg: 'No hay perfil para este usuario.'});
         }
 
         res.json(profile);
@@ -37,10 +37,10 @@ router.post(
  [
     auth,
     [
-        check('status', 'Status is required')
+        check('status', 'Se requiere estado')
             .not()  
             .isEmpty(),
-        check('skills', 'Skills is required')
+        check('skills', 'Habilidad requeridad')
             .not()
             .isEmpty()
     ] 
@@ -138,13 +138,13 @@ router.get('/user/:user_id', async(req, res) => {
         }).populate('user', ['name', 'avatar']);
 
         if(!profile)
-         return res.status(400).json({ msg: 'Profile not found' });
+         return res.status(400).json({ msg: 'Perfil no encontrado' });
 
         res.json(profile);
     } catch (err) {
         console.error(err.message);
         if(err.kind == 'ObjectId') {
-            return res.status(400).json({ msg: 'Profile not found' });    
+            return res.status(400).json({ msg: 'Perfil no encontrado' });    
         }
     }
 });
@@ -161,11 +161,11 @@ router.delete('/', auth, async(req, res) => {
         // Remove user
         await User.findOneAndRemove({ _id: req.user.id });
 
-        res.json({ msg: 'User deleted' });
+        res.json({ msg: 'Usuario eliminado' });
     } catch (err) {
         console.error(err.message);
         if(err.kind == 'ObjectId') {
-            return res.status(400).json({ msg: 'Profile not found' });    
+            return res.status(400).json({ msg: 'Perfil no encontrado' });    
         }
     }
 });
@@ -176,13 +176,13 @@ router.delete('/', auth, async(req, res) => {
 
 router.put('/experience', [auth,
     [
-    check('title', 'Title is required')
+    check('title', 'Titulo es requerido')
         .not()
         .isEmpty(),
-        check('company', 'Company is required')
+        check('company', 'Compañia es requerida')
         .not()
         .isEmpty(),
-        check('from', 'From date is required')
+        check('from', 'Se requiere la fecha de inicio')
         .not()
         .isEmpty()
     ]
@@ -258,16 +258,16 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
 
 router.put('/education', [auth,
     [
-    check('school', 'School is required')
+    check('school', 'Escuela es requerida')
         .not()
         .isEmpty(),
-        check('degree', 'Degree is required')
+        check('degree', 'Se requiere título')
         .not()
         .isEmpty(),
-        check('fieldofstudy', 'Field of study is required')
+        check('fieldofstudy', 'Se requiere campo de estudio')
         .not()
         .isEmpty(),
-        check('from', 'From date is required')
+        check('from', 'Se requiere la fecha de inicio')
         .not()
         .isEmpty()
     ]
@@ -358,7 +358,7 @@ router.get('/github/:username', (req, res) => {
             if(error) console.error(error);
 
             if(response.statusCode !== 200) {
-                return res.status(404).json({ msg: 'No Github profile found' });
+                return res.status(404).json({ msg: 'No se encontró ningún perfil de Github' });
             }
 
             res.json(JSON.parse(body));

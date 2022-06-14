@@ -157,7 +157,9 @@ nav .search-bar input[type="text"]::placeholder {
 .profile__label,
 .profile__title,
 .profile__date,
-.not__found-title {
+.not__found-title,
+.profile__name-user,
+.profile__information {
     color: var(--color-primary);
 }
 
@@ -260,7 +262,7 @@ nav .search-bar input[type="text"]::placeholder {
     animation: animatestext 2s linear infinite alternate;
 }
 
-.not__found-title{
+.not__found-title {
     font-weight: 700;
 }
 

@@ -1,3 +1,4 @@
+import { UilCodeBranch, UilEye, UilStar } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -9,27 +10,29 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
   }, [getGithubRepos, username]);
 
   return (
-    <div>
-      <h2>Repositorios de Github</h2>
+    <div className='ms-4'>
+      <h4 className='profile__information'>Repositorios de Github</h4>
       {repos.map(repo => (
         <div key={repo.id}>
           <div>
-            <h4>
+            <span className='profile__information'>
               <a href={repo.html_url} target='_blank' rel='noopener noreferrer'>
                 {repo.name}
               </a>
-            </h4>
-            <p>{repo.description}</p>
+            </span>
+            <p className='text-muted'>{repo.description}</p>
           </div>
-          <div>
+          <div className='text-muted'>
             <ul>
-              <li>
-                Stars: {repo.stargazers_count}
+              <li className='d-flex align-items-center'>
+                <UilStar className='me-1' />Estrellas: {repo.stargazers_count}
               </li>
-              <li>
-                Watchers: {repo.watchers_count}
+              <li className='d-flex align-items-center'>
+                <UilEye className='me-1' />Vistas: {repo.watchers_count}
               </li>
-              <li>Forks: {repo.forks_count}</li>
+              <li className='d-flex align-items-center'>
+                <UilCodeBranch className='me-1' />Forks: {repo.forks_count}
+              </li>
             </ul>
           </div>
         </div>

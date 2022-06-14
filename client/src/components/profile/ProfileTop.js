@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import '../main.css';
 
 const ProfileTop = ({
   profile: {
@@ -11,13 +12,13 @@ const ProfileTop = ({
   }
 }) => {
   return (
-    <div>
-      <img src={avatar} alt='Avatar' />
-      <h1>{name}</h1>
-      <p>
+    <div className='text-center'>
+      <img src={avatar} alt='Avatar' className='rounded-circle' />
+      <h1 className='profile__name-user mt-3'>{name}</h1>
+      <p className='text-muted'>
         {status} {company ? <span> en {company}</span> : null}
       </p>
-      <p>{location ? <span>{location}</span> : null}</p>
+      <p className='text-muted'>{location ? <span>{location}</span> : null}</p>
       <div>
         {website ? (
           <a href={website} target='_blank' rel='noopener noreferrer'>
@@ -33,7 +34,6 @@ const ProfileTop = ({
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                <i className={`fab fa-${key} fa-2x`}></i>
               </a>
             ))
           : null}

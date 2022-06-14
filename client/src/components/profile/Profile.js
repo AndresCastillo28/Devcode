@@ -1,3 +1,4 @@
+import { UilEdit } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
 import { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -27,60 +28,63 @@ const Profile = ({ getProfileById, profile: { profile }, auth }) => {
             <Sidebar />
           </div>
           <div className='col-md-8 col-lg-6 vstack gap-4'>
-            {profile === null ? (
-              <Spinner />
-            ) : (
-              <Fragment>
-                {auth.isAuthenticated &&
-                  auth.loading === false &&
-                  auth.user._id === profile.user._id && (
+            <div className='card border-0 my-5'>
+              <div className='card-body'>
+                {profile === null ? (
+                  <Spinner />
+                ) : (
+                  <Fragment>
+                    {auth.isAuthenticated &&
+                      auth.loading === false &&
+                      auth.user._id === profile.user._id && (
+                        <div className='d-flex justify-content-end align-items-center mb-2'>
+                          <Link to='/edit-profile' className='btn btn-primary'>
+                            Editar Perfil <UilEdit className='ms-1' />
+                          </Link>
+                        </div>
+                      )}
                     <div>
-                      <Link to='/edit-profile' className='btn btn-primary'>
-                        Editar Perfil
-                      </Link>
+                      <ProfileTop profile={profile} />
+                      <ProfileAbout profile={profile} />
+                      <div className='mt-3 ms-4'>
+                        <h4 className='profile__information'>Experiencia</h4>
+                        {profile.experience.length > 0 ? (
+                          <Fragment>
+                            {profile.experience.map((experience) => (
+                              <ProfileExperience
+                                key={experience._id}
+                                experience={experience}
+                              />
+                            ))}
+                          </Fragment>
+                        ) : (
+                          <p className='text-muted'>No tiene experiencia</p>
+                        )}
+                      </div>
+
+                      <div className='ms-4'>
+                        <h4 className='profile__information'>Educación</h4>
+                        {profile.education.length > 0 ? (
+                          <Fragment>
+                            {profile.education.map((education) => (
+                              <ProfileEducation
+                                key={education._id}
+                                education={education}
+                              />
+                            ))}
+                          </Fragment>
+                        ) : (
+                          <p className='text-muted'>No tiene educación</p>
+                        )}
+                      </div>
+                      {profile.githubusername && (
+                        <ProfileGithub username={profile.githubusername} />
+                      )}
                     </div>
-                  )}
-                <div>
-                  <ProfileTop profile={profile} />
-                  <ProfileAbout profile={profile} />
-                  <div>
-                    <h2>Experiencia</h2>
-                    {profile.experience.length > 0 ? (
-                      <Fragment>
-                        {profile.experience.map((experience) => (
-                          <ProfileExperience
-                            key={experience._id}
-                            experience={experience}
-                          />
-                        ))}
-                      </Fragment>
-                    ) : (
-                      <h4>No tiene experiencia</h4>
-                    )}
-                  </div>
-
-                  <div>
-                    <h2>Educación</h2>
-                    {profile.education.length > 0 ? (
-                      <Fragment>
-                        {profile.education.map((education) => (
-                          <ProfileEducation
-                            key={education._id}
-                            education={education}
-                          />
-                        ))}
-                      </Fragment>
-                    ) : (
-                      <h4>No tiene educación</h4>
-                    )}
-                  </div>
-
-                  {profile.githubusername && (
-                    <ProfileGithub username={profile.githubusername} />
-                  )}
-                </div>
-              </Fragment>
-            )}
+                  </Fragment>
+                )}
+              </div>
+            </div>
           </div>
           <div className='col-lg-3'>
           </div>

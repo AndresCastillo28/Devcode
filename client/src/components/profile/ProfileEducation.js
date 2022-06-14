@@ -4,8 +4,8 @@ import formatDate from '../../utils/formatDate';
 const ProfileEducation = ({
   education: { school, degree, fieldofstudy, current, to, from, description }
 }) => (
-  <div>
-    <h3>{school}</h3>
+  <div className='text-muted'>
+    <p>{school}</p>
     <p>
       {formatDate(from)} - {to ? formatDate(to) : 'Actualmente'}
     </p>
