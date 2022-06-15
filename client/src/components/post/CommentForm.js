@@ -7,7 +7,7 @@ const CommentForm = ({ postId, addComment }) => {
   const [text, setText] = useState('');
 
   return (
-    <div className='card border-0 shadow'>
+    <div className='card border-0'>
       <div className='card-body'>
         <form onSubmit={e => {
           e.preventDefault();

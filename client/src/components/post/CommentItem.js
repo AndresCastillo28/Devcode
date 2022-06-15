@@ -11,8 +11,8 @@ const CommentItem = ({
   auth,
   deleteComment
 }) => (
-  <div className='card mb-4'>
-    <div className='card-header bg-light border-0 pb-0'>
+  <div className='card border-0 mb-4'>
+    <div className='card-header border-0 pb-0'>
       <div className='d-flex align-items-center justify-content-between'>
         <div className='d-flex align-items-center'>
           <div className='avatar avatar-story me-2'>

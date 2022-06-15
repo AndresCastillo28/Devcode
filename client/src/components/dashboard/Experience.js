@@ -27,17 +27,19 @@ const Experience = ({ experience, deleteExperience }) => {
   return (
     <Fragment>
       <h2 className='experience__title mt-2'>Experiencia</h2>
-      <table className='table table-secondary table-hover'>
-        <thead>
-          <tr>
-            <th>Compañia</th>
-            <th>Titulo</th>
-            <th>Años</th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>{experiences}</tbody>
-      </table>
+      <div className='table-responsive'>
+        <table className='table table-secondary table-hover'>
+          <thead>
+            <tr>
+              <th>Compañia</th>
+              <th>Titulo</th>
+              <th>Años</th>
+              <th />
+            </tr>
+          </thead>
+          <tbody>{experiences}</tbody>
+        </table>
+      </div>
     </Fragment>
   );
 };

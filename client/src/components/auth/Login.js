@@ -1,6 +1,6 @@
 import { UilArrow, UilSignInAlt } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import { login } from '../../actions/auth';
@@ -32,7 +32,7 @@ const Login = ({ login, isAuthenticated }) => {
         <div className='container mt-5 pt-5'>
           <div className='row'>
             <div className='col-12 col-sm-7 col-md-6 m-auto'>
-              <div className='card border-0 shadow'>
+              <div className='card border-0'>
                 <div className='card-body'>
                   <Link to='/' className='login__title'>
                     <div className='text-center'>

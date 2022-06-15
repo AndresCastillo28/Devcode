@@ -11,8 +11,8 @@ const ProfileItem = ({
   }
 }) => {
   return (
-    <div className='card bg-light my-4'>
-      <div className='card-header bg-light border-0 pb-0'>
+    <div className='card border-0 my-4'>
+      <div className='card-header border-0 pb-0'>
         <span className='text-muted'>Quizás conozcas a:</span>
       </div>
       <div className='card-body'>

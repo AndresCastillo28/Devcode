@@ -144,6 +144,11 @@ nav .search-bar input[type="text"]::placeholder {
     color: var(--color-gray);
 }
 
+.card,
+.card-header {
+    background: var(--color-white) !important;
+}
+
 .login__link,
 .register__link,
 .login__label,
@@ -287,6 +292,7 @@ nav .search-bar input[type="text"]::placeholder {
 }
 
 .footer {
+    background: var(--color-white) !important;
     color: var(--color-primary);
     font-weight: 500;
 }
@@ -304,6 +310,10 @@ nav .search-bar input[type="text"]::placeholder {
 
     .home__title-icon {
         width: 3rem;
+    }
+
+    .profile__name {
+        font-size: 1rem;
     }
 }
 

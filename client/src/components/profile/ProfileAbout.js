@@ -1,3 +1,4 @@
+import { UilCheck } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
 import { Fragment } from 'react';
 
@@ -18,8 +19,8 @@ const ProfileAbout = ({
     <h4 className='profile__information'>Habilidades</h4>
     <div>
       {skills.map((skill, index) => (
-        <div className='text-muted' key={index}>
-          {skill}
+        <div className='d-flex align-items-center text-muted' key={index}>
+          <UilCheck className='me-1' />{skill}
         </div>
       ))}
     </div>

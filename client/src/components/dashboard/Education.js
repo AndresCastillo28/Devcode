@@ -27,17 +27,19 @@ const Education = ({ education, deleteEducation }) => {
   return (
     <Fragment>
       <h2 className='education__title mt-2'>Educación</h2>
-      <table className='table table-secondary table-hover'>
-        <thead>
-          <tr>
-            <th>Universidad o Bootcamp</th>
-            <th>Grado o Certificado</th>
-            <th>Año</th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>{educations}</tbody>
-      </table>
+      <div className='table-responsive'>
+        <table className='table table-secondary table-hover'>
+          <thead>
+            <tr>
+              <th>Universidad o Bootcamp</th>
+              <th>Grado o Certificado</th>
+              <th>Año</th>
+              <th />
+            </tr>
+          </thead>
+          <tbody>{educations}</tbody>
+        </table>
+      </div>
     </Fragment>
   );
 };
