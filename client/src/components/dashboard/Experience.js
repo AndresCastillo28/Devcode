@@ -28,7 +28,7 @@ const Experience = ({ experience, deleteExperience }) => {
     <Fragment>
       <h2 className='experience__title mt-2'>Experiencia</h2>
       <div className='table-responsive'>
-        <table className='table table-secondary table-hover'>
+        <table className='table table__bg table-borderless'>
           <thead>
             <tr>
               <th>Compañia</th>

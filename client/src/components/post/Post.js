@@ -26,7 +26,7 @@ const Post = ({ getPost, post: { post, loading } }) => {
           <div className='col-lg-3'>
             <Sidebar />
           </div>
-          <div className='col-md-8 col-lg-6 vstack gap-4'>
+          <div className='col-md-8 col-lg-6 vstack gap-4 pt-lg-5 pt-sm-2'>
             <PostItem post={post} showActions={false} />
             <CommentForm postId={post._id} />
             <div>

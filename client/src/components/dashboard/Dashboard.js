@@ -32,7 +32,6 @@ const Dashboard = ({
             <DashboardActions />
             <Experience experience={profile.experience} />
             <Education education={profile.education} />
-
             <div>
               <button className='btn btn-danger d-flex align-items-center mb-4' onClick={() => deleteAccount()}>
                 Eliminar cuenta <UilTrashAlt />

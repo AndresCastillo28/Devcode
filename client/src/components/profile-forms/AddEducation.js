@@ -42,11 +42,11 @@ const AddEducation = ({ addEducation }) => {
               name='school'
               value={school}
               onChange={onChange}
-              className='form-control'
+              className='form-control inputs-forms'
               id='floatingText'
               required
             />
-            <label className='profile__label' htmlFor='floatingText'>Escuela o Bootcamp</label>
+            <label className='label' htmlFor='floatingText'>Escuela o Bootcamp</label>
           </div>
           <div className='form-floating mb-4'>
             <input
@@ -55,11 +55,11 @@ const AddEducation = ({ addEducation }) => {
               name='degree'
               value={degree}
               onChange={onChange}
-              className='form-control'
+              className='form-control inputs-forms'
               id='floatingText'
               required
             />
-            <label className='profile__label' htmlFor='floatingText'>Grado o Certificado</label>
+            <label className='label' htmlFor='floatingText'>Grado o Certificado</label>
           </div>
           <div className='form-floating mb-4'>
             <input
@@ -68,16 +68,16 @@ const AddEducation = ({ addEducation }) => {
               name='fieldofstudy'
               value={fieldofstudy}
               onChange={onChange}
-              className='form-control'
+              className='form-control inputs-forms'
               id='floatingText'
               required
             />
-            <label className='profile__label' htmlFor='floatingText'>Campo de estudio</label>
+            <label className='label' htmlFor='floatingText'>Campo de estudio</label>
           </div>
           <div>
             <h4 className='profile__title'>Desde</h4>
             <input
-              className='form-control profile__date'
+              className='form-control inputs-forms'
               type='date'
               name='from'
               value={from}
@@ -99,7 +99,7 @@ const AddEducation = ({ addEducation }) => {
           <div className='mb-4'>
             <h4 className='profile__title'>Hasta</h4>
             <input
-              className='form-control profile__date'
+              className='form-control inputs-forms'
               type='date'
               name='to'
               value={to}
@@ -115,11 +115,11 @@ const AddEducation = ({ addEducation }) => {
               placeholder='Descripción del programa'
               value={description}
               onChange={onChange}
-              className='form-control'
+              className='form-control inputs border-0'
               id='floatingText'
               required
             />
-            <label className='profile__label' htmlFor='floatingText'>Descripción del programa</label>
+            <label className='label' htmlFor='floatingText'>Descripción del programa</label>
           </div>
           <div className='d-flex align-items-center justify-content-center mb-4'>
             <input type='submit' className='btn btn-primary me-4' />

@@ -1,13 +1,20 @@
 :root {
-    --color-white: hsl(252, 30%, 100%);
-    --color-light: hsl(252, 30%, 95%);
+    --bg-light: hsl(252, 30%, 95%);
+    --bg-card-light: hsl(252, 30%, 100%);
+    --bg-inputs-light: hsl(210, 8%, 90%);
+    --label-light: hsl(252, 75%, 60%);
+    --text-light: hsl(252, 15%, 65%);
+    --bg-dark: hsl(210, 4%, 10%);
+    --bg-card-dark: hsl(210, 3%, 15%);
+    --bg-inputs-dark: hsl(210, 1%, 31%);
+    --label-dark: hsl(64, 35%, 85%);
+    --text-dark: hsl(64, 35%, 85%);
+
     --color-gray: hsl(252, 15%, 65%);
     --color-primary: hsl(252, 75%, 60%);
     --color-secondary: hsl(252, 100%, 90%);
     --color-success: hsl(120, 95%, 65%);
     --color-danger: hsl(0, 95%, 65%);
-    --color-dark: hsl(252, 30%, 17%);
-    --color-black: hsl(252, 30%, 10%);
 
     --border-radius: 2rem;
     --card-border-radius: 1rem;
@@ -19,12 +26,65 @@
     --sticky-top-right: -18rem;
 }
 
-body {
-    background: var(--color-light);
+@media(prefers-color-scheme: dark) {
+    :root {
+        --bg: var(--bg-dark);
+        --bg-card: var(--bg-card-dark);
+        --bg-inputs: var(--bg-inputs-dark);
+        --label: var(--label-dark);
+        --text: var(--text-dark);
+    }
+}
+
+[data-theme='dark'] {
+    --bg: var(--bg-dark);
+    --bg-card: var(--bg-card-dark);
+    --bg-inputs: var(--bg-inputs-dark);
+    --label: var(--label-dark);
+    --text: var(--text-dark);
+}
+
+@media(prefers-color-scheme: light) {
+    :root {
+        --bg: var(--bg-light);
+        --bg-card: var(--bg-card-light);
+        --bg-inputs: var(--bg-inputs-light);
+        --label: var(--label-light);
+        --text: var(--text-light);
+    }
+}
+
+[data-theme='light'] {
+    --bg: var(--bg-light);
+    --bg-card: var(--bg-card-light);
+    --bg-inputs: var(--bg-inputs-light);
+    --label: var(--label-light);
+    --text: var(--text-light);
 }
 
 a {
     text-decoration: none;
+}
+
+.inputs-forms {
+    background: var(--bg-inputs) !important;
+    color: var(--text) !important;
+    border: none !important;
+}
+
+.label {
+    color: var(--label) !important;
+}
+
+.inputs,
+.table__bg {
+    background: var(--bg-inputs) !important;
+    color: var(--text) !important;
+}
+
+.table__bg{
+    color: var(--label)!important;
+    border-radius: 5px;
 }
 
 .btn {
@@ -62,12 +122,12 @@ a {
 }
 
 .text-muted {
-    color: var(--color-gray);
+    color: var(--text) !important;
 }
 
 /* Navbar */
 .navbar {
-    background: var(--color-white);
+    background: var(--bg-card);
     padding: 1rem 0;
 }
 
@@ -79,7 +139,7 @@ a {
 nav .search-bar {
     display: flex;
     align-items: center;
-    background: var(--color-light);
+    background: var(--bg);
     border-radius: var(--border-radius);
     padding: var(--search-padding);
 }
@@ -105,9 +165,27 @@ nav .search-bar input[type="text"]::placeholder {
     width: 40px;
 }
 
-.nav__dropdown-item,
+.dropdown-menu {
+    background: var(--bg-card);
+}
+
+.dropdown-item,
+.nav__dropdown-item {
+    color: var(--text);
+}
+
+.dropdown-item:hover,
 .nav__dropdown-item:hover {
-    color: var(--color-gray);
+    color: var(--text) !important;
+    background: var(--bg) !important;
+}
+
+.dropdown-item:active {
+    background: var(--bg) !important;
+}
+
+.navbar__offcanvas {
+    background: var(--bg-card);
 }
 
 .nav__logout,
@@ -136,32 +214,28 @@ nav .search-bar input[type="text"]::placeholder {
 
 .home__description {
     font-size: 1.5rem;
-    color: var(--color-gray);
+    color: var(--text);
 }
 
 .login__text,
 .register__text {
-    color: var(--color-gray);
+    color: var(--text);
 }
 
 .card,
 .card-header {
-    background: var(--color-white) !important;
+    background: var(--bg-card) !important;
 }
 
 .login__link,
 .register__link,
-.login__label,
-.register__label,
 .post__title,
 .post__user,
 .profile__title,
 .profile__name,
 .dashboard__title,
 .dashboard__username,
-.profile__label,
 .profile__title,
-.profile__date,
 .not__found-title,
 .profile__name-user,
 .profile__information {
@@ -190,7 +264,7 @@ nav .search-bar input[type="text"]::placeholder {
 
 .profile {
     padding: var(--card-padding);
-    background: var(--color-white);
+    background: var(--bg-card);
     border-radius: var(--card-border-radius);
     display: flex;
     align-items: center;
@@ -201,7 +275,7 @@ nav .search-bar input[type="text"]::placeholder {
 .left,
 .sidebar {
     margin-top: 1rem;
-    background: var(--color-white);
+    background: var(--bg-card);
     border-radius: var(--card-border-radius);
 }
 
@@ -210,14 +284,14 @@ nav .search-bar input[type="text"]::placeholder {
     align-items: center;
     height: 4rem;
     cursor: pointer;
-    color: var(--color-gray);
+    color: var(--text);
     transition: all 300ms ease;
     position: relative;
 }
 
 .menu-item:hover {
-    background: var(--color-light);
-    color: var(--color-gray);
+    background: var(--bg);
+    color: var(--text);
 }
 
 .sidebar-icon {
@@ -233,9 +307,13 @@ nav .search-bar input[type="text"]::placeholder {
     padding: 0.8rem 0;
 }
 
+.card-body {
+    color: var(--text);
+}
+
 .post__action {
     cursor: pointer;
-    color: var(--color-gray);
+    color: var(--text);
 }
 
 .post__dropdown-delete {
@@ -247,12 +325,12 @@ nav .search-bar input[type="text"]::placeholder {
 }
 
 .post__action-comment {
-    color: var(--color-gray);
+    color: var(--text);
 }
 
 .education__title,
 .experience__title {
-    color: var(--color-gray);
+    color: var(--text);
 }
 
 .not__found-img {
@@ -291,17 +369,6 @@ nav .search-bar input[type="text"]::placeholder {
     }
 }
 
-.footer {
-    background: var(--color-white) !important;
-    color: var(--color-primary);
-    font-weight: 500;
-}
-
-.footer__copy {
-    color: var(--color-primary) !important;
-    font-weight: 700;
-}
-
 @media screen and (max-width: 1024px) {
 
     .home__title {
@@ -328,10 +395,6 @@ nav .search-bar input[type="text"]::placeholder {
 }
 
 @media screen and (max-width: 320px) {
-    .home {
-        margin-top: 3rem;
-    }
-
     .home__title {
         font-size: 3rem;
     }

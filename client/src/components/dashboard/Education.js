@@ -28,7 +28,7 @@ const Education = ({ education, deleteEducation }) => {
     <Fragment>
       <h2 className='education__title mt-2'>Educación</h2>
       <div className='table-responsive'>
-        <table className='table table-secondary table-hover'>
+        <table className='table table__bg table-borderless'>
           <thead>
             <tr>
               <th>Universidad o Bootcamp</th>

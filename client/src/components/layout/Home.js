@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import home from '../images/home.png';
 import '../main.css';
-import Footer from './Footer';
 
 const Home = ({ isAuthenticated }) => {
   if (isAuthenticated) {
@@ -34,7 +33,6 @@ const Home = ({ isAuthenticated }) => {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

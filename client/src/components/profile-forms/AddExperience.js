@@ -41,11 +41,11 @@ const AddExperience = ({ addExperience }) => {
               name='title'
               value={title}
               onChange={onChange}
-              className='form-control'
+              className='form-control inputs-forms'
               id='floatingText'
               required
             />
-            <label className='profile__label' htmlFor='floatingText'>Trabajo</label>
+            <label className='label' htmlFor='floatingText'>Trabajo</label>
           </div>
           <div className='form-floating mb-4'>
             <input
@@ -54,11 +54,11 @@ const AddExperience = ({ addExperience }) => {
               name='company'
               value={company}
               onChange={onChange}
-              className='form-control'
+              className='form-control inputs-forms'
               id='floatingText'
               required
             />
-            <label className='profile__label' htmlFor='floatingText'>Compañia</label>
+            <label className='label' htmlFor='floatingText'>Compañia</label>
           </div>
           <div className='form-floating mb-4'>
             <input
@@ -67,16 +67,16 @@ const AddExperience = ({ addExperience }) => {
               name='location'
               value={location}
               onChange={onChange}
-              className='form-control'
+              className='form-control inputs-forms'
               id='floatingText'
               required
             />
-            <label className='profile__label' htmlFor='floatingText'>Ubicación</label>
+            <label className='label' htmlFor='floatingText'>Ubicación</label>
           </div>
           <div>
             <h4 className='profile__title'>Desde</h4>
             <input
-              className='form-control profile__date'
+              className='form-control inputs-forms'
               type='date'
               name='from'
               value={from}
@@ -100,7 +100,7 @@ const AddExperience = ({ addExperience }) => {
           <div className='mb-4'>
             <h4 className='profile__title'>Hasta</h4>
             <input
-              className='form-control profile__date'
+              className='form-control inputs-forms'
               type='date'
               name='to'
               value={to}
@@ -116,11 +116,11 @@ const AddExperience = ({ addExperience }) => {
               placeholder='Descripción del trabajo'
               value={description}
               onChange={onChange}
-              className='form-control'
+              className='form-control inputs border-0'
               id='floatingText'
               required
             />
-            <label className='profile__label' htmlFor='floatingText'>Descripción del trabajo</label>
+            <label className='label' htmlFor='floatingText'>Descripción del trabajo</label>
           </div>
           <div className='d-flex align-items-center justify-content-center mb-4'>
             <input type='submit' className='btn btn-primary me-4' />

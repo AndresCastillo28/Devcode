@@ -97,7 +97,7 @@ const ProfileForm = ({
         </p>
         <form onSubmit={onSubmit}>
           <div className='form-floating mb-4'>
-            <select className='form-select' id='floatingSelect' name='status' value={status} onChange={onChange}>
+            <select className='form-select inputs border-0' id='floatingSelect' name='status' value={status} onChange={onChange}>
               <option value='Developer'>Developer</option>
               <option value='Junior Developer'>Junior Developer</option>
               <option value='Senior Developer'>Senior Developer</option>
@@ -107,7 +107,7 @@ const ProfileForm = ({
               <option value='Intern'>Intern</option>
               <option value='Other'>Other</option>
             </select>
-            <label className='profile__label' htmlFor='floatingSelect'>Selecciona tu profesión</label>
+            <label className='label' htmlFor='floatingSelect'>Selecciona tu profesión</label>
           </div>
           <div className='form-floating mb-4'>
             <input
@@ -116,11 +116,11 @@ const ProfileForm = ({
               name='company'
               value={company}
               onChange={onChange}
-              className='form-control'
+              className='form-control inputs-forms'
               id='floatingCompany'
               required
             />
-            <label className='profile__label' htmlFor='floatingCompany'>Compañia</label>
+            <label className='label' htmlFor='floatingCompany'>Compañia</label>
           </div>
           <div className='form-floating mb-4'>
             <input
@@ -129,11 +129,11 @@ const ProfileForm = ({
               name='website'
               value={website}
               onChange={onChange}
-              className='form-control'
+              className='form-control inputs-forms'
               id='floatingWeb'
               required
             />
-            <label className='profile__label' htmlFor='floatingWeb'>Sitio Web</label>
+            <label className='label' htmlFor='floatingWeb'>Sitio Web</label>
           </div>
           <div className='form-floating mb-4'>
             <input
@@ -142,11 +142,11 @@ const ProfileForm = ({
               name='location'
               value={location}
               onChange={onChange}
-              className='form-control'
+              className='form-control inputs-forms'
               id='floatingLocation'
               required
             />
-            <label className='profile__label' htmlFor='floatingLocation'>Ubicación</label>
+            <label className='label' htmlFor='floatingLocation'>Ubicación</label>
           </div>
           <div className='form-floating mb-4'>
             <input
@@ -155,11 +155,11 @@ const ProfileForm = ({
               name='skills'
               value={skills}
               onChange={onChange}
-              className='form-control'
+              className='form-control inputs-forms'
               id='floatingSkill'
               required
             />
-            <label className='profile__label' htmlFor='floatingSkill'>Habilidades</label>
+            <label className='label' htmlFor='floatingSkill'>Habilidades</label>
           </div>
           <div className='form-floating mb-4'>
             <input
@@ -168,11 +168,11 @@ const ProfileForm = ({
               name='githubusername'
               value={githubusername}
               onChange={onChange}
-              className='form-control'
+              className='form-control inputs-forms'
               id='floatingGithub'
               required
             />
-            <label className='profile__label' htmlFor='floatingGithub'>Usuario Github</label>
+            <label className='label' htmlFor='floatingGithub'>Usuario Github</label>
           </div>
           <div className='form-floating mb-4'>
             <textarea
@@ -180,11 +180,11 @@ const ProfileForm = ({
               name='bio'
               value={bio}
               onChange={onChange}
-              className='form-control'
+              className='form-control inputs border-0'
               id='floatingBio'
               required
             />
-            <label className='profile__label' htmlFor='floatingBio'>Biografia</label>
+            <label className='label' htmlFor='floatingBio'>Biografia</label>
           </div>
           <div>
             <button
@@ -206,11 +206,11 @@ const ProfileForm = ({
                     name='twitter'
                     value={twitter}
                     onChange={onChange}
-                    className='form-control'
+                    className='form-control inputs-forms'
                     id='floatingWeb'
                     required
                   />
-                  <label className='profile__label' htmlFor='floatingWeb'>Twitter URL</label>
+                  <label className='label' htmlFor='floatingWeb'>Twitter URL</label>
                 </div>
                 <div className='form-floating mb-4'>
                   <input
@@ -219,11 +219,11 @@ const ProfileForm = ({
                     name='facebook'
                     value={facebook}
                     onChange={onChange}
-                    className='form-control'
+                    className='form-control inputs-forms'
                     id='floatingWeb'
                     required
                   />
-                  <label className='profile__label' htmlFor='floatingWeb'>Facebook URL</label>
+                  <label className='label' htmlFor='floatingWeb'>Facebook URL</label>
                 </div>
                 <div className='form-floating mb-4'>
                   <input
@@ -232,11 +232,11 @@ const ProfileForm = ({
                     name='youtube'
                     value={youtube}
                     onChange={onChange}
-                    className='form-control'
+                    className='form-control inputs-forms'
                     id='floatingWeb'
                     required
                   />
-                  <label className='profile__label' htmlFor='floatingWeb'>YouTube URL</label>
+                  <label className='label' htmlFor='floatingWeb'>YouTube URL</label>
                 </div>
                 <div className='form-floating mb-4'>
                   <input
@@ -245,11 +245,11 @@ const ProfileForm = ({
                     name='linkedin'
                     value={linkedin}
                     onChange={onChange}
-                    className='form-control'
+                    className='form-control inputs-forms'
                     id='floatingWeb'
                     required
                   />
-                  <label className='profile__label' htmlFor='floatingWeb'>Linkedin URL</label>
+                  <label className='label' htmlFor='floatingWeb'>Linkedin URL</label>
                 </div>
                 <div className='form-floating mb-4'>
                   <input
@@ -258,11 +258,11 @@ const ProfileForm = ({
                     name='instagram'
                     value={instagram}
                     onChange={onChange}
-                    className='form-control'
+                    className='form-control inputs-forms'
                     id='floatingWeb'
                     required
                   />
-                  <label className='profile__label' htmlFor='floatingWeb'>Instragram URL</label>
+                  <label className='label' htmlFor='floatingWeb'>Instragram URL</label>
                 </div>
               </div>
             </Fragment>

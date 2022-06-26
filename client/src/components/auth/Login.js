@@ -29,10 +29,10 @@ const Login = ({ login, isAuthenticated }) => {
   return (
     <>
       <section>
-        <div className='container mt-5 pt-5'>
+        <div className='container'>
           <div className='row'>
             <div className='col-12 col-sm-7 col-md-6 m-auto'>
-              <div className='card border-0'>
+              <div className='card my-5 border-0'>
                 <div className='card-body'>
                   <Link to='/' className='login__title'>
                     <div className='text-center'>
@@ -44,20 +44,20 @@ const Login = ({ login, isAuthenticated }) => {
                       <input
                         type='email'
                         name='email'
-                        className='form-control'
+                        className='form-control inputs-forms'
                         placeholder='Correo electrónico'
                         value={email}
                         required
                         id='floatingInput'
                         onChange={onChange}
                       />
-                      <label className='login__label' htmlFor='floatingInput'>Correo electrónico</label>
+                      <label className='label' htmlFor='floatingInput'>Correo electrónico</label>
                     </div>
                     <div className='form-floating mb-4'>
                       <input
                         type='password'
                         name='password'
-                        className='form-control'
+                        className='form-control inputs-forms'
                         placeholder='Contraseña'
                         value={password}
                         onChange={onChange}
@@ -65,7 +65,7 @@ const Login = ({ login, isAuthenticated }) => {
                         id='floatingPassword'
                         minLength='6'
                       />
-                      <label className='login__label' htmlFor='floatingPassword'>Contraseña</label>
+                      <label className='label' htmlFor='floatingPassword'>Contraseña</label>
                     </div>
                     <div className='d-flex justify-content-center'>
                       <button type='submit' className='btn btn-primary text-center'>
