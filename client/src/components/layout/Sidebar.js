@@ -1,5 +1,6 @@
 import { UilCompass, UilEdit, UilSetting, UilUsersAlt } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logout } from '../../actions/auth';
@@ -18,16 +19,36 @@ const Sidebar = ({ auth: { user } }) => {
             </div>
             <div className='sidebar'>
                 <Link to='/dashboard' className='menu-item'>
-                    <span><UilSetting className='sidebar-icon' />Configuración</span>
+                    <span><UilSetting className='sidebar-icon' />
+                        <FormattedMessage
+                            id='setting'
+                            defaultMessage='Setting'
+                        />
+                    </span>
                 </Link>
                 <Link to='/profiles' className='menu-item'>
-                    <span><UilCompass className='sidebar-icon' />Explorar</span>
+                    <span><UilCompass className='sidebar-icon' />
+                        <FormattedMessage
+                            id='explore'
+                            defaultMessage='Explore'
+                        />
+                    </span>
                 </Link>
                 <Link to='/posts' className='menu-item'>
-                    <span><UilEdit className='sidebar-icon' />Publicaciones</span>
+                    <span><UilEdit className='sidebar-icon' />
+                        <FormattedMessage
+                            id='posts'
+                            defaultMessage='Posts'
+                        />
+                    </span>
                 </Link>
                 <Link to='/' className='menu-item'>
-                    <span><UilUsersAlt className='sidebar-icon' />Amigos</span>
+                    <span><UilUsersAlt className='sidebar-icon' />
+                        <FormattedMessage
+                            id='friends'
+                            defaultMessage='Friends'
+                        />
+                    </span>
                 </Link>
             </div>
         </section>
