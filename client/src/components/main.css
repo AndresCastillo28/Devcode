@@ -82,8 +82,8 @@ a {
     color: var(--text) !important;
 }
 
-.table__bg{
-    color: var(--label)!important;
+.table__bg {
+    color: var(--label) !important;
     border-radius: 5px;
 }
 
@@ -218,7 +218,8 @@ nav .search-bar input[type="text"]::placeholder {
 }
 
 .login__text,
-.register__text {
+.register__text,
+.terms__text {
     color: var(--text);
 }
 
@@ -238,7 +239,8 @@ nav .search-bar input[type="text"]::placeholder {
 .profile__title,
 .not__found-title,
 .profile__name-user,
-.profile__information {
+.profile__information,
+.terms__title {
     color: var(--color-primary);
 }
 

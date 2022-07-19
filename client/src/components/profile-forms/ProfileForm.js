@@ -254,7 +254,6 @@ const ProfileForm = ({
                             onChange={onChange}
                             className='form-control inputs-forms'
                             id='floatingGithub'
-                            required
                         />
                         <label className='label' htmlFor='floatingGithub'>
                             <FormattedMessage
@@ -310,7 +309,6 @@ const ProfileForm = ({
                                         onChange={onChange}
                                         className='form-control inputs-forms'
                                         id='floatingWeb'
-                                        required
                                     />
                                     <label className='label' htmlFor='floatingWeb'>Twitter URL</label>
                                 </div>
@@ -323,7 +321,6 @@ const ProfileForm = ({
                                         onChange={onChange}
                                         className='form-control inputs-forms'
                                         id='floatingWeb'
-                                        required
                                     />
                                     <label className='label' htmlFor='floatingWeb'>Facebook URL</label>
                                 </div>
@@ -336,7 +333,6 @@ const ProfileForm = ({
                                         onChange={onChange}
                                         className='form-control inputs-forms'
                                         id='floatingWeb'
-                                        required
                                     />
                                     <label className='label' htmlFor='floatingWeb'>YouTube URL</label>
                                 </div>
@@ -349,7 +345,6 @@ const ProfileForm = ({
                                         onChange={onChange}
                                         className='form-control inputs-forms'
                                         id='floatingWeb'
-                                        required
                                     />
                                     <label className='label' htmlFor='floatingWeb'>Linkedin URL</label>
                                 </div>
@@ -362,7 +357,6 @@ const ProfileForm = ({
                                         onChange={onChange}
                                         className='form-control inputs-forms'
                                         id='floatingWeb'
-                                        required
                                     />
                                     <label className='label' htmlFor='floatingWeb'>Instragram URL</label>
                                 </div>

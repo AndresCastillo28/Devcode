@@ -82,5 +82,9 @@
     "dashboard.desc": "You haven't set up a profile yet, please add information.",
     "year": "Year",
     "years": "Years",
-    "university":"University or Bootcamp"
+    "university": "University or Bootcamp",
+    "terms": "Terms and Conditions",
+    "report.post": "Report Post",
+    "reason": "Reason",
+    "report": "Report"
 }

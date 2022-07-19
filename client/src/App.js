@@ -23,7 +23,9 @@ import AddExperience from './components/profile-forms/AddExperience';
 import ProfileForm from './components/profile-forms/ProfileForm';
 import Profile from './components/profile/Profile';
 import Profiles from './components/profiles/Profiles';
+import ReportForm from './components/ReportForm';
 import PrivateRoute from './components/routing/PrivateRoute';
+import Terms from './components/Terms';
 import { langContext } from './context/langContext';
 import store from './store';
 import setAuthToken from './utils/setAuthToken';
@@ -62,37 +64,46 @@ const App = () => {
                 <Router>
                     <Alert />
                     <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="register" element={<Register />} />
-                        <Route path="login" element={<Login />} />
-                        <Route path="profiles" element={<Profiles />} />
-                        <Route path="profile/:id" element={<Profile />} />
+                        <Route path='/' element={<Home />} />
+                        <Route path='register' element={<Register />} />
+                        <Route path='login' element={<Login />} />
+                        <Route path='terms' element={<Terms />} />
+                        <Route path='profiles' element={<Profiles />} />
+                        <Route path='profile/:id' element={<Profile />} />
                         <Route
-                            path="dashboard"
+                            path='dashboard'
                             element={<PrivateRoute component={Dashboard} />}
                         />
                         <Route
-                            path="create-profile"
+                            path='create-profile'
                             element={<PrivateRoute component={ProfileForm} />}
                         />
                         <Route
-                            path="edit-profile"
+                            path='edit-profile'
                             element={<PrivateRoute component={ProfileForm} />}
                         />
                         <Route
-                            path="add-experience"
+                            path='add-experience'
                             element={<PrivateRoute component={AddExperience} />}
                         />
                         <Route
-                            path="add-education"
+                            path='add-education'
                             element={<PrivateRoute component={AddEducation} />}
                         />
                         <Route
-                            path="posts"
+                            path='posts'
                             element={<PrivateRoute component={Posts} />}
                         />
-                        <Route path="posts/:id" element={<PrivateRoute component={Post} />} />
-                        <Route path="/*" element={<NotFound />} />
+                        <Route
+                            path='/posts/reportform'
+                            element={<PrivateRoute component={ReportForm} />}
+                        />
+                        <Route path='posts/:id'
+                            element={<PrivateRoute component={Post} />}
+                        />
+                        <Route path='/*'
+                            element={<NotFound />}
+                        />
                     </Routes>
                     <div className='container-fluid footer pb-1'>
                         <footer className='py-3 my-4'>
@@ -110,6 +121,14 @@ const App = () => {
                                         <FormattedMessage
                                             id='register'
                                             defaultMessage='Register'
+                                        />
+                                    </Link>
+                                </li>
+                                <li className='nav-item'>
+                                    <Link to='/terms' className='nav-link px-2'>
+                                        <FormattedMessage
+                                            id='terms'
+                                            defaultMessage='Terms and Conditions'
                                         />
                                     </Link>
                                 </li>

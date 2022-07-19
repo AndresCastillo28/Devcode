@@ -43,12 +43,12 @@ const CommentItem = ({
                                 </span>
                             )}
                         </li>
-                        <li className='dropdown-item'>
+                        <Link to='/posts/reportform' className='dropdown-item'>
                             <FormattedMessage
                                 id='post.report'
                                 defaultMessage='Report Post'
                             />
-                        </li>
+                        </Link>
                     </ul>
                 </div>
             </div>

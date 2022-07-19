@@ -79,8 +79,12 @@
     "work.desc": "Descripción del trabajo",
     "welcome": "Bienvenido",
     "delete.account": "Eliminar cuenta",
-    "dashboard.desc":"Aún no ha configurado un perfil, agregue información.",
+    "dashboard.desc": "Aún no ha configurado un perfil, agregue información.",
     "year": "Año",
     "years": "Años",
-    "university":"Universidad o Bootcamp"
+    "university": "Universidad o Bootcamp",
+    "terms": "Términos y condiciones",
+    "report.post": "Reportar Publicación",
+    "reason": "Motivo",
+    "report": "Reportar"
 }
