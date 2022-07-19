@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4f1a5687.css",
+    "main.js": "/static/js/main.f162d79a.js",
+    "static/media/terminosycondiciones.pdf": "/static/media/terminosycondiciones.e8839f58c6e23d6f297b.pdf",
+    "static/media/home.png": "/static/media/home.5fa77ac997891c63161f.png",
+    "static/media/notfound.png": "/static/media/notfound.49e9f03073928c21c460.png",
+    "index.html": "/index.html",
+    "main.4f1a5687.css.map": "/static/css/main.4f1a5687.css.map",
+    "main.f162d79a.js.map": "/static/js/main.f162d79a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4f1a5687.css",
+    "static/js/main.f162d79a.js"
+  ]
+}
