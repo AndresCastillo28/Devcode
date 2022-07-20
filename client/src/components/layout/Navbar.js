@@ -1,4 +1,4 @@
-import { UilArrow, UilCompass, UilPlus, UilSearch, UilSetting, UilSignInAlt, UilSignOutAlt } from '@iconscout/react-unicons';
+import { UilArrow, UilCompass, UilPlus, UilSetting, UilSignInAlt, UilSignOutAlt } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
 import { Fragment } from 'react';
 import { FormattedMessage } from 'react-intl';
@@ -10,10 +10,10 @@ import '../main.css';
 const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
     const authLinks = (
         <div className='navbar-collapse'>
-            <div className='search-bar ms-auto'>
+            {/* <div className='search-bar ms-auto'>
                 <UilSearch className='search__bar-icon' />
                 <input type='text' />
-            </div>
+            </div> */}
             <ul className='navbar-nav flex-nowrap align-items-center ms-auto'>
                 <li className='nav-item ms-2 pt-2'>
                     <Link to='/posts' className='btn btn-primary d-flex align-items-center'>

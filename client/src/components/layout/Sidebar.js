@@ -1,4 +1,4 @@
-import { UilCompass, UilEdit, UilSetting, UilUsersAlt } from '@iconscout/react-unicons';
+import { UilCompass, UilEdit, UilSetting } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
@@ -8,7 +8,7 @@ import '../main.css';
 
 const Sidebar = ({ auth: { user } }) => {
     return (
-        <section className='d-none d-lg-block position-fixed'>
+        <section className='d-none d-lg-block'>
             <div className='left'>
                 <div className='profile'>
                     <img src={user && user.avatar} alt='User' className='nav__user-photo rounded-circle' />
@@ -42,14 +42,14 @@ const Sidebar = ({ auth: { user } }) => {
                         />
                     </span>
                 </Link>
-                <Link to='/' className='menu-item'>
+                {/* <Link to='/' className='menu-item'>
                     <span><UilUsersAlt className='sidebar-icon' />
                         <FormattedMessage
                             id='friends'
                             defaultMessage='Friends'
                         />
                     </span>
-                </Link>
+                </Link> */}
             </div>
         </section>
     )

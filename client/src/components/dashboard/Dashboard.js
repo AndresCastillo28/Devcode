@@ -35,27 +35,17 @@ const Dashboard = ({
                         id='welcome'
                         defaultMessage='Welcome'
                     />
-                    <br />
-                    {user && user.name}
+                    <span className='dashboard__username'>: {user && user.name}</span>
                 </h4>
                 {profile !== null ? (
                     <>
                         <DashboardActions />
                         <Experience experience={profile.experience} />
                         <Education education={profile.education} />
-                        <div>
-                            <button className='btn btn-danger d-flex align-items-center mb-4' onClick={() => deleteAccount()}>
-                                <FormattedMessage
-                                    id='delete.account'
-                                    defaultMessage='Delete account'
-                                />
-                                <UilTrashAlt />
-                            </button>
-                        </div>
                     </>
                 ) : (
-                    <>
-                        <p>
+                    <div className='my-5 py-5'>
+                        <p className='text-muted'>
                             <FormattedMessage
                                 id='dashboard.desc'
                                 defaultMessage="You haven' t set up a profile yet, please add information."
@@ -67,8 +57,17 @@ const Dashboard = ({
                                 defaultMessage='Create your profile'
                             />
                         </Link>
-                    </>
+                    </div>
                 )}
+                <div>
+                    <button className='btn btn-danger d-flex align-items-center mb-4' onClick={() => deleteAccount()}>
+                        <FormattedMessage
+                            id='delete.account'
+                            defaultMessage='Delete account'
+                        />
+                        <UilTrashAlt />
+                    </button>
+                </div>
             </section>
         </>
     );
