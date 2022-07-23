@@ -10,6 +10,7 @@ import { LOGOUT } from './actions/types';
 import './App.css';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import Chat from './components/Chat';
 import Dashboard from './components/dashboard/Dashboard';
 import en from './components/images/english.png';
 import es from './components/images/spain.png';
@@ -100,6 +101,9 @@ const App = () => {
                         />
                         <Route path='posts/:id'
                             element={<PrivateRoute component={Post} />}
+                        />
+                        <Route path='chat'
+                            element={<PrivateRoute component={Chat} />}
                         />
                         <Route path='/*'
                             element={<NotFound />}

@@ -10,6 +10,7 @@
     "confirm.password": "Confirm Password",
     "register.span": "Do you already have an account?",
     "navbar.create": "Create",
+    "navbar.chat": "Chat",
     "setting": "Setting",
     "explore": "Explore",
     "navbar.logout": "Logout",
@@ -87,5 +88,9 @@
     "report.post": "Report Post",
     "reason": "Reason",
     "report": "Report",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "chat.name": "Write your name",
+    "chat.button": "Go to chat",
+    "chat.message": "Write your message",
+    "chat.send": "Send message"
 }

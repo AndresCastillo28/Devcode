@@ -20,6 +20,7 @@
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
+    "socket.io-client": "^2.3.0",
     "sweetalert2": "^11.4.23",
     "use-local-storage": "^2.3.6",
     "uuid": "^8.3.2",

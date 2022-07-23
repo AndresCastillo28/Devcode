@@ -1,4 +1,4 @@
-import { UilArrow, UilCompass, UilPlus, UilSetting, UilSignInAlt, UilSignOutAlt } from '@iconscout/react-unicons';
+import { UilArrow, UilCommentMessage, UilCompass, UilPlus, UilSetting, UilSignInAlt, UilSignOutAlt } from '@iconscout/react-unicons';
 import PropTypes from 'prop-types';
 import { Fragment } from 'react';
 import { FormattedMessage } from 'react-intl';
@@ -10,10 +10,6 @@ import '../main.css';
 const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
     const authLinks = (
         <div className='navbar-collapse'>
-            {/* <div className='search-bar ms-auto'>
-                <UilSearch className='search__bar-icon' />
-                <input type='text' />
-            </div> */}
             <ul className='navbar-nav flex-nowrap align-items-center ms-auto'>
                 <li className='nav-item ms-2 pt-2'>
                     <Link to='/posts' className='btn btn-primary d-flex align-items-center'>
@@ -22,6 +18,15 @@ const Navbar = ({ auth: { isAuthenticated, user }, logout }) => {
                             defaultMessage='Create'
                         />
                         <UilPlus className='ms-1' />
+                    </Link>
+                </li>
+                <li className='nav-item ms-2 pt-2'>
+                    <Link to='/chat' className='btn btn-primary d-flex align-items-center'>
+                        <FormattedMessage
+                            id='navbar.chat'
+                            defaultMessage='Chat'
+                        />
+                        <UilCommentMessage className='ms-1' />
                     </Link>
                 </li>
                 <li className='nav-item ms-2 pt-2'>

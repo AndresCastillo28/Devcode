@@ -240,7 +240,8 @@ nav .search-bar input[type="text"]::placeholder {
 .not__found-title,
 .profile__name-user,
 .profile__information,
-.terms__title {
+.terms__title,
+.chat__title {
     color: var(--color-primary);
 }
 
@@ -349,6 +350,12 @@ nav .search-bar input[type="text"]::placeholder {
 
 .not__found-title {
     font-weight: 700;
+}
+
+.chat {
+    min-height: 50vh;
+    max-height: 50vh;
+    overflow: auto;
 }
 
 @keyframes animates {
